@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/clothes-shop.iml" filepath="$PROJECT_DIR$/.idea/clothes-shop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clothes-shop-api/clothes-shop-api.iml" filepath="$PROJECT_DIR$/clothes-shop-api/clothes-shop-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clothes_shop_discovery_client/clothes_shop_discovery_client.iml" filepath="$PROJECT_DIR$/clothes_shop_discovery_client/clothes_shop_discovery_client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clothes_shop_eureka_server/clothes_shop_eureka_server.iml" filepath="$PROJECT_DIR$/clothes_shop_eureka_server/clothes_shop_eureka_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-consumer/shop-consumer.iml" filepath="$PROJECT_DIR$/shop-consumer/shop-consumer.iml" />
+    </modules>
+  </component>
+</project>

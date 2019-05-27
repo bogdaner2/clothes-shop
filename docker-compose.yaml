@@ -1,0 +1,96 @@
+version: '3'
+
+services:
+  api:
+    depends_on:
+      - database
+      - eureka-server
+      - rabbit-mq
+    container_name: clothes-shop-api
+    restart: always
+    build:
+      context: ./clothes-shop-api
+      dockerfile: Dockerfile
+    volumes:
+        - ./clothes-shop-api:/usr/src/clothes-shop-api
+    ports:
+    - "5000:5000"
+  database:
+    container_name: database
+    restart: always
+    build:
+      context: ./docker
+      dockerfile: mysql.Dockerfile
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+          MYSQL_ROOT_PASSWORD: secret
+          MYSQL_DATABASE: shop
+    ports:
+      - "20000:3306"
+
+  eureka-server:
+    container_name: eureka-server
+    restart: always
+    build:
+      context: ./clothes_shop_eureka_server
+      dockerfile: Dockerfile
+    volumes:
+      - ./clothes_shop_eureka_server:/usr/src/clothes_shop_eureka_server
+    ports:
+      - "8761:8761"
+
+  client:
+    depends_on:
+      - eureka-server
+      - api
+    container_name: client
+    restart: always
+    build:
+      context: ./clothes_shop_discovery_client
+      dockerfile: Dockerfile
+    volumes:
+      - ./clothes_shop_discovery_client:/usr/src/clothes_shop_discovery_client
+    ports:
+      - "6000:6000"
+
+  rabbit-mq:
+    image: rabbitmq:3.8.0-beta.3-management
+    hostname: rabbit-mq
+    container_name: rabbit-mq
+    environment:
+      RABBITMQ_ERLANG_COOKIE: root
+      RABBITMQ_NODENAME: rabbit@rabbit-mq
+    ports:
+      - "15673:15672"
+
+  config-server:
+    container_name: config-server
+    depends_on:
+      - rabbit-mq
+    restart: always
+    build:
+      context: ./config-server
+      dockerfile: Dockerfile
+    volumes:
+      - ./config-server:/usr/src/config-server
+    ports:
+      - "8888:8888"
+
+  consumer:
+    depends_on:
+      - database
+      - rabbit-mq
+    container_name: consumer
+    build:
+      context: ./shop-consumer
+      dockerfile: Dockerfile
+    volumes:
+      - ./shop-consumer:/usr/src/shop-consumer
+    ports:
+      - "11000:11000"
+
+volumes:
+  db_data:
+
+          
