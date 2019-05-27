@@ -5,50 +5,41 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>bags</title>
+    <title>Brand Info</title>
 </head>
 <jsp:include page="menu.jsp" />
 <body>
 
-<div class="row justify-content-center">
-    <h1>Bag Info</h1>
+<div class="justify-content-center">
+    <h1>Brand Info</h1>
 </div>
 <div class="card mx-auto card-width">
-    <form method="post" action="/bags/update/${bag.id}">
-        <div class="card-heading p-2"><h4>bag id : ${bag.id}</h4></div>
+    <form method="post" action="/brands/update/${brand.id}">
+        <div class="card-heading p-2"><h4>Brand id : ${brand.id}</h4></div>
         <div class="card-heading p-2">
-            Brand: ${bag.brand} <br>
-            <input class="form-control"
-                   placeholder="${bag.brand}"
-                   name="brand"/>
+            Name: ${brand.name}
+            <br><input class="form-control"
+                       placeholder="${brand.name}"
+                       name="name"/>
         </div>
         <div class="card-heading p-2">
-            Liters: ${bag.liters} <br> <input class="form-control"
-                                                   name="liters"
-                                                type="number"
-                                                   placeholder="${bag.liters}"
-        />
+            History: ${brand.history}
+            <br> <input class="form-control"
+                        name="history"
+                        type="text"
+                        placeholder="${brand.history}"/>
         </div>
         <div class="card-heading p-2">
-            Price : ${bag.price}$
+            Year of foundation : ${brand.foundationYear}
             <br>
             <input class="form-control"
-                   name="price"
+                   name="foundationYear"
                    type="number"
-                   placeholder="${bag.price}"
-            />
-        </div>
-        <div class="card-heading p-2">
-            Count of pockets: ${bag.countOfPockets}
-            <br>
-            <input class="form-control"
-                   name="countOfPockets"
-                   placeholder="${bag.countOfPockets}"/>
+                   placeholder="${brand.foundationYear}"/>
         </div>
         <div class="card-heading p-2 mx-auto" style="max-width: 70px">
             <button type="submit" class="btn btn-outline-secondary" >Update</button>
         </div>
-</div>
 </form>
 </div>
 

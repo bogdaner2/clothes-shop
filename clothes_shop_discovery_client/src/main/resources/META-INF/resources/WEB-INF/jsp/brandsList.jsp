@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Bags</title>
+    <title>Brands</title>
 </head>
 <jsp:include page="menu.jsp" />
 <body>
@@ -17,28 +17,24 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add new bag</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add new brand</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/bags/create">
+                <form method="POST" action="/brands/create">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="brand" class="col-form-label">Brand:</label>
-                            <input type="text" name="brand" class="form-control" id="brand">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" name="name" class="form-control" id="name">
                         </div>
                         <div class="form-group">
-                            <label for="liters" class="col-form-label">Liters:</label>
-                            <input type="number" name="liters" class="form-control" id="liters">
+                            <label for="history" class="col-form-label">History:</label>
+                            <input type="text" name="history" class="form-control" id="history">
                         </div>
                         <div class="form-group">
-                            <label for="price" class="col-form-label">Price:</label>
-                            <input type="text" name="price" class="form-control" id="price">
-                        </div>
-                        <div class="form-group">
-                            <label for="pocket" class="col-form-label">Count of pockets:</label>
-                            <input type="text" name="countOfPockets" class="form-control" id="pocket">
+                            <label for="foundationYear" class="col-form-label">Year of foundation:</label>
+                            <input type="number" name="foundationYear" class="form-control" id="foundationYear">
                         </div>
                     </div>
 
@@ -55,25 +51,27 @@
         <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Brand</th>
-            <th scope="col">Liters</th>
-            <th scope="col">Price</th>
-            <th scope="col">Count of pockets</th>
-            <th scope="col">Action</th>
+            <th scope="col">Name</th>
+            <th scope="col">History</th>
+            <th scope="col">Year of foundation</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach  items="${bags}" var ="bag">
+        <c:forEach  items="${brands}" var ="brand">
             <tr>
-                <th scope="row">${bag.id}</th>
-                <td>${bag.brand}</td>
-                <td>${bag.liters}</td>
-                <td>${bag.price}</td>
-                <td>${bag.countOfPockets}</td>
+                <th scope="row">${brand.id}</th>
+                <td>${brand.name}</td>
+                <td>${brand.history}</td>
+                <td>${brand.foundationYear}</td>
                 <td>
                     <div>
-                        <a type="button" class="btn btn-warning" href="/bags/${bag.id}" style="margin-right: 10px">Detail</a>
-                        <a type="button" class="btn btn-danger" href="/bags/delete/${bag.id}" >Delete</a>
+                        <button
+                            class="btn btn-warning"
+                            onclick="window.location.href='/brands/${brand.id}'"
+                            style="margin-right: 10px">Detail</button>
+                        <button
+                            class="btn btn-danger"
+                            onclick="window.location.href='/brands/delete/${brand.id}'" >Delete</button>
                     </div>
                 </td>
             </tr>

@@ -4,12 +4,12 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mr-auto" >
+            <a class="nav-item nav-link" href="/brands">Brands</a>
+            <a class="nav-item nav-link" href="/products">Products</a>
+            <a style="display: ${isAdmin ? 'block': 'none'}" class="nav-item nav-link" href="/logs">Logs</a>
+        </div>
         <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/products">Coats</a>
-            <a class="nav-item nav-link" href="/brands">Bags</a>
-            <a class="nav-item nav-link" href="/employees">Employees</a>
-            <div style="color: #343a40;
-    min-width: 320%;">.</div>
             <div class="nav-item navbar-text">${name}</div>
             <a class="nav-item nav-link" href="/logout">Logout</a>
         </div>
