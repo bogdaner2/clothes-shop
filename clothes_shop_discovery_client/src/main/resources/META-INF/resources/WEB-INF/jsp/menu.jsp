@@ -10,7 +10,7 @@
             <a style="display: ${isAdmin ? 'block': 'none'}" class="nav-item nav-link" href="/logs">Logs</a>
         </div>
         <div class="navbar-nav">
-            <div class="nav-item navbar-text">${name}</div>
+            <a class="nav-item nav-link" href="/userProfile" style="margin-right: 25px">${name}</a>
             <a class="nav-item nav-link" href="/logout">Logout</a>
         </div>
     </div>

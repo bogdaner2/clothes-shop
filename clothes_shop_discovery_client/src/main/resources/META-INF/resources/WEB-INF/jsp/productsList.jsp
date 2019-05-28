@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Employee</title>
+    <title>Products</title>
 </head>
 <jsp:include page="menu.jsp" />
 <body>
@@ -17,24 +17,28 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Add new employee</h5>
+                    <h5 class="modal-title" id="exampleModalLongTitle">Add new product</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/employees/create">
+                <form method="POST" action="/products/create">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="fullname" class="col-form-label">Fullname:</label>
-                            <input type="text" name="fullname" class="form-control" id="fullname">
+                            <label for="brand" class="col-form-label">Brand:</label>
+                            <select class="form-control" id="brand" name="brandId">
+                                <c:forEach  items="${brands}" var="brand">
+                                    <option value="${brand.id}">${brand.name}</option>
+                                </c:forEach>
+                            </select>
                         </div>
                         <div class="form-group">
-                            <label for="salary" class="col-form-label">Salary:</label>
-                            <input type="number" name="salary" class="form-control" id="salary">
+                            <label for="type" class="col-form-label">Type:</label>
+                            <input type="text" name="type" class="form-control" id="type">
                         </div>
                         <div class="form-group">
-                            <label for="position" class="col-form-label">Position:</label>
-                            <input type="text" name="position" class="form-control" id="position">
+                            <label for="price" class="col-form-label">Price:</label>
+                            <input type="number" name="price" class="form-control" id="price">
                         </div>
                     </div>
 
@@ -51,23 +55,23 @@
         <thead>
         <tr>
             <th scope="col">Id</th>
-            <th scope="col">Fullname</th>
-            <th scope="col">Salary</th>
-            <th scope="col">Position</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Type</th>
+            <th scope="col">Price</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach  items="${employees}" var ="employee">
+        <c:forEach  items="${products}" var ="product">
             <tr>
-                <th scope="row">${employee.id}</th>
-                <td>${employee.fullname}</td>
-                <td>${employee.salary}</td>
-                <td>${employee.position}</td>
+                <th scope="row">${product.id}</th>
+                <td>${product.brand.name}</td>
+                <td>${product.type}</td>
+                <td>${product.price}</td>
                 <td>
                     <div>
-                        <a type="button" class="btn btn-warning" href="/employees/${employee.id}" style="margin-right: 10px">Detail</a>
-                        <a type="button" class="btn btn-danger" href="/employees/delete/${employee.id}" >Delete</a>
+                        <button type="button" class="btn btn-warning" onclick="window.location.href='/products/${product.id}'" style="margin-right: 10px">Detail</button>
+                        <button type="button" class="btn btn-danger" onclick="window.location.href='/products/delete/${product.id}'">Delete</button>
                     </div>
                 </td>
             </tr>

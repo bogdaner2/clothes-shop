@@ -18,12 +18,12 @@
         <h2 class="form-heading">Log in</h2>
 
         <div class="form-group ${error != null ? 'has-error' : ''}">
-            <span style="margin-bottom: 10px">${msg}</span>
+            <span style="margin-bottom: 10px;margin-top: 10px">${msg}</span>
             <input name="username" type="text" class="form-control" placeholder="Username"
                    autofocus="true"/>
             <br>
             <input name="password" type="password" class="form-control" placeholder="Password"/>
-            <span style="margin-top: 10px">${errorMsg}</span>
+            <span style="margin-bottom: 10px;margin-top: 10px">${errorMsg}</span>
             <br>
 
             <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>

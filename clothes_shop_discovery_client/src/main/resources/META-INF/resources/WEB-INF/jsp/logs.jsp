@@ -21,11 +21,10 @@
     <c:forEach  items="${logs}" var ="log">
         <tr>
             <th scope="row">${log.id}</th>
-            <td><pre style="color: white">${log.message}</pre></td>
+            <td><xmp> ${log.message}</xmp></td>
             <td>${log.actionType}</td>
         </tr>
-    </c:forEach>C
-
+    </c:forEach>
     </tbody>
 </table>
 </div>

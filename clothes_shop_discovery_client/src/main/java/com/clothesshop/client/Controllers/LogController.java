@@ -1,6 +1,5 @@
 package com.clothesshop.client.Controllers;
 
-import com.clothesshop.client.Models.Brand;
 import com.clothesshop.client.Models.Log;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ import java.io.IOException;
 
 @Controller
 @RequestMapping(path="logs")
-public class LogsController {
+public class LogController {
     @Autowired
     private LoadBalancerClient client;
 
@@ -31,7 +30,7 @@ public class LogsController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String all(Model model, String error, String logout) {
+    public String all(Model model) {
 
         String url = String.format("%s/api/logs", getInstancesRun());
         RestTemplate restTemplate = new RestTemplate();

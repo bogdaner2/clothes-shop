@@ -1,6 +1,8 @@
 package com.clothesshop.client.Controllers;
 
+import com.clothesshop.client.Dto.ProductDto;
 import com.clothesshop.client.Models.Brand;
+import com.clothesshop.client.Models.Product;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -17,12 +19,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
+import sun.plugin2.message.Message;
+import sun.security.krb5.internal.crypto.Des;
 
 import java.io.IOException;
 
 @Controller
-@RequestMapping(path="brands")
-public class BrandController {
+@RequestMapping(path="products")
+public class ProductController {
 
 
     @Autowired
@@ -36,13 +40,19 @@ public class BrandController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String all(Model model, String error, String logout) {
+    public String all(Model model) {
 
-        String url = String.format("%s/api/brands", getInstancesRun());
+        String productsUrl = String.format("%s/api/products", getInstancesRun());
+        String brandsUrl = String.format("%s/api/brands", getInstancesRun());
+
         RestTemplate restTemplate = new RestTemplate();
 
-        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
-        Brand[] brands = DeserializeList(response.getBody());
+        ResponseEntity<String> productsResponse = restTemplate.getForEntity(productsUrl, String.class);
+        Product[] products = DeserializeProductList(productsResponse.getBody());
+
+        ResponseEntity<String> response = restTemplate.getForEntity(brandsUrl, String.class);
+        Brand[] brands = DeserializeBrandsList(response.getBody());
+
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String name = auth.getName();
@@ -50,32 +60,33 @@ public class BrandController {
                 .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"));
         model.addAttribute("name", name);
         model.addAttribute("isAdmin", iaAdmin);
+        model.addAttribute("products", products);
         model.addAttribute("brands", brands);
 
-        return "brandsList";
+        return "productsList";
     }
 
     @RequestMapping(value="/create", method=RequestMethod.POST)
-    public ModelAndView create(@ModelAttribute Brand brand) {
-        String url = String.format("%s/api/brands/", getInstancesRun());
+    public ModelAndView create(@ModelAttribute ProductDto Product) {
+        String url = String.format("%s/api/products/", getInstancesRun());
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<Brand> entity = new HttpEntity<>(brand, headers);
+        HttpEntity<ProductDto> entity = new HttpEntity<>(Product, headers);
 
         String response = restTemplate
-                .exchange(url,HttpMethod.POST, entity, new ParameterizedTypeReference<String>(){})
+                .exchange(url, HttpMethod.POST, entity, new ParameterizedTypeReference<String>(){})
                 .getBody();
 
-        return new ModelAndView("redirect:/brands");
+        return new ModelAndView("redirect:/products");
     }
 
     @RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
     public ModelAndView delete(@PathVariable("id") Integer id) {
 
-        String url = String.format("%s/api/brands/" + id, getInstancesRun());
+        String url = String.format("%s/api/products/" + id, getInstancesRun());
         RestTemplate restTemplate = new RestTemplate();
 
         String response = restTemplate
@@ -83,60 +94,74 @@ public class BrandController {
                 .getBody();
 
         if(Boolean.parseBoolean(response)) {
-            return new ModelAndView("redirect:/brands");
+            return new ModelAndView("redirect:/products");
         }
-        return new ModelAndView("redirect:/brands");
+        return new ModelAndView("redirect:/products");
     }
 
     @RequestMapping(value="/{id}",method = RequestMethod.GET)
     public ModelAndView detail(@PathVariable("id") Integer id) {
 
-        ModelAndView model = new ModelAndView("brandsDetail");
+        ModelAndView model = new ModelAndView("productsDetail");
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String name = auth.getName();
         boolean iaAdmin = auth.getAuthorities().stream()
                 .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"));
 
-        String url = String.format("%s/api/brands/" + id, getInstancesRun());
+        String productUrl = String.format("%s/api/products/" + id, getInstancesRun());
+        String brandsUrl = String.format("%s/api/brands", getInstancesRun());
+
         RestTemplate restTemplate = new RestTemplate();
 
-        String brand = restTemplate
-                .exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<String>() {})
-                .getBody();
+        ResponseEntity<String> productsResponse = restTemplate.getForEntity(productUrl, String.class);
+        Product product = Deserialize(productsResponse.getBody());
+
+        ResponseEntity<String> response = restTemplate.getForEntity(brandsUrl, String.class);
+        Brand[] brands = DeserializeBrandsList(response.getBody());
 
         model.addObject("name", name);
         model.addObject("isAdmin", iaAdmin);
-
-        model.addObject("brand", Deserialize(brand));
+        model.addObject("product", product);
+        model.addObject("brands", brands);
         return model;
     }
 
     @RequestMapping(value="/update/{id}", method=RequestMethod.POST)
-    public ModelAndView update(@PathVariable("id") Integer id,@ModelAttribute Brand brand) {
+    public ModelAndView update(@PathVariable("id") Integer id,@ModelAttribute ProductDto product) {
 
-        brand.setId(id);
-
-        String url = String.format("%s/api/brands/"+ id, getInstancesRun());
+        String url = String.format("%s/api/products/"+ id, getInstancesRun());
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<Brand> entity = new HttpEntity<>(brand, headers);
+        HttpEntity<ProductDto> entity = new HttpEntity<>(product, headers);
 
         String response = restTemplate
                 .exchange(url,HttpMethod.PUT, entity, new ParameterizedTypeReference<String>(){})
                 .getBody();
 
-        return new ModelAndView("redirect:/brands");
+        return new ModelAndView("redirect:/products");
     }
 
-    private Brand[] DeserializeList(String brandString)
+    private Product[] DeserializeProductList(String productString)
     {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            Brand[] brands= mapper.readValue(brandString, Brand[].class);
+            Product[] products= mapper.readValue(productString, Product[].class);
+            return  products;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return  null;
+    }
+
+    private Brand[] DeserializeBrandsList(String brandString)
+    {
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            Brand[] brands = mapper.readValue(brandString, Brand[].class);
             return  brands;
         } catch (IOException e) {
             e.printStackTrace();
@@ -144,12 +169,13 @@ public class BrandController {
         return  null;
     }
 
-    private Brand Deserialize(String brandString)
+
+    private Product Deserialize(String productString)
     {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            Brand brand = mapper.readValue(brandString, Brand.class);
-            return  brand;
+            Product Product = mapper.readValue(productString, Product.class);
+            return  Product;
         } catch (IOException e) {
             e.printStackTrace();
         }
