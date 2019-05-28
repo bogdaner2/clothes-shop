@@ -24,6 +24,15 @@
             <input name="password" id="password" type="password" class="form-control" placeholder="Password"/>
             <span>${errorMsg}</span>
             <br>
+            <label for="name">Input name:</label>
+            <input name="name" id="name" type="text" class="form-control" placeholder="Name"/>
+            <br>
+            <label for="email">Input email:</label>
+            <input name="email" id="email" type="email" class="form-control" placeholder="Email"/>
+            <br>
+            <label for="phone">Input phone:</label>
+            <input name="phone" id="phone" type="text" class="form-control" placeholder="Phone"/>
+            <br>
             <div class="form-group">
                 <label for="role">Select role:</label>
                 <select name="role" class="form-control" id="role">

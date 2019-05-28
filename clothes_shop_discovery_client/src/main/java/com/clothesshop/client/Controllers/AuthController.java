@@ -1,9 +1,12 @@
 package com.clothesshop.client.Controllers;
 
 
-import com.clothesshop.client.DAL.AuthService;
-import com.clothesshop.client.DAL.RoleService;
+import com.clothesshop.client.DAL.AuthRepository;
+import com.clothesshop.client.DAL.ProfileRepository;
+import com.clothesshop.client.DAL.RoleRepository;
+import com.clothesshop.client.Dto.RegistrationFormDto;
 import com.clothesshop.client.Models.Authorities;
+import com.clothesshop.client.Models.Profile;
 import com.clothesshop.client.Models.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,10 +19,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AuthController {
 
     @Autowired
-    AuthService authService;
+    AuthRepository authRepository;
 
     @Autowired
-    RoleService roleService;
+    RoleRepository roleRepository;
+
+    @Autowired
+    ProfileRepository profileRepository;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
@@ -46,11 +52,17 @@ public class AuthController {
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public String registration_post(@ModelAttribute Users user, String role) {
+    public String registration_post(@ModelAttribute RegistrationFormDto form, String role) {
+        Users user = new Users(form.getUsername(), form.getPassword());
+        Authorities auth = new Authorities(form.getUsername(),"ROLE_"+ role.toUpperCase());
+        Profile profile = new Profile(form.getUsername(),form.getName(),form.getEmail(),form.getPhone());
+
         user.setEnabled(true);
-        authService.save(user);
-        Authorities a = new Authorities(user.getUsername(),"ROLE_"+role.toUpperCase());
-        roleService.save(a);
+
+        authRepository.save(user);
+        roleRepository.save(auth);
+        profileRepository.save(profile);
+
         return "redirect:/login";
     }
 }
