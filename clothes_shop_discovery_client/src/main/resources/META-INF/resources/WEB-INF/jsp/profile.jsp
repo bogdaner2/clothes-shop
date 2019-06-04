@@ -9,78 +9,28 @@
 </head>
 <jsp:include page="menu.jsp" />
 <body>
+<div class="container-fluid">
+ <div class="row">
+  <form method="POST" action="${contextPath}/userProfile/update/${profile.id}"  style="max-width: 600px;padding-left: 0;margin-top: 30px;" class="col-7 offset-4">
+   <h2 class="form-heading">Edit profile</h2>
 
-<div class="col-10 offset-1">
- <button type="button" class="btn btn-success btn-lg my-2 col-2 offset-5" data-toggle="modal" data-target="#exampleModalCenter">Create new</button>
-
- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-   <div class="modal-content">
-    <div class="modal-header">
-     <h5 class="modal-title" id="exampleModalLongTitle">Add new coat</h5>
-     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-     </button>
-    </div>
-    <form method="POST" action="/coats/create">
-    <div class="modal-body">
-     <div class="form-group">
-      <label for="brand" class="col-form-label">Brand:</label>
-      <input type="text" name="brand" class="form-control" id="brand">
-     </div>
-     <div class="form-group">
-      <label for="material" class="col-form-label">Material:</label>
-     <input type="text" name="material" class="form-control" id="material">
-     </div>
-      <div class="form-group">
-     <label for="price" class="col-form-label">Price:</label>
-     <input type="number" name="price" class="form-control" id="price">
-      </div>
-     <div class="form-group">
-     <label for="size" class="col-form-label">Size:</label>
-     <input type="text" name="size" class="form-control" id="size">
+   <div class="form-group">
+    <label for="name">Input name:</label>
+    <input name="name" id="name" type="text" class="form-control" placeholder="${profile.name}"/>
+    <br>
+    <label for="email">Input email:</label>
+    <input name="email" id="email" type="email" class="form-control" placeholder="${profile.email}"/>
+    <br>
+    <label for="phone">Input phone:</label>
+    <input name="phone" id="phone" type="text" class="form-control" placeholder="${profile.phone}"/>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Change</button>
    </div>
-   </div>
-
-     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <button class="btn btn-primary"  type="submit">Add</button>
-    </div>
-    </form>
-   </div>
-  </div>
+  </form>
+  <button class="btn btn-lg btn-danger btn-block" onclick="window.location.href='/userProfile/delete/${profile.id}'" >Delete account</button>
  </div>
-
- <table class="table table-striped table-dark">
-  <thead>
-  <tr>
-   <th scope="col">Id</th>
-   <th scope="col">Brand</th>
-   <th scope="col">Material</th>
-   <th scope="col">Price</th>
-   <th scope="col">Size</th>
-   <th scope="col">Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  <c:forEach  items="${coats}" var ="coat">
-   <tr>
-    <th scope="row">${coat.id}</th>
-    <td>${coat.brand}</td>
-    <td>${coat.material}</td>
-    <td>${coat.price}</td>
-    <td>${coat.size}</td>
-    <td>
-     <div>
-      <a type="button" class="btn btn-warning" href="/coats/${coat.id}" style="margin-right: 10px">Detail</a>
-      <a type="button" class="btn btn-danger" href="/coats/delete/${coat.id}" >Delete</a>
-     </div>
-    </td>
-   </tr>
-  </c:forEach>
-  </tbody>
- </table>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

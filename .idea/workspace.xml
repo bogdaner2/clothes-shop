@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b7d5915-2e03-4f75-a605-ad1db383fa4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/ProfileRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Profile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Dto/EditProfileDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/coatDetail.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/coatsList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/UserProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/AuthRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/AuthRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/ProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/ProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/profile.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/clothes_shop_eureka_server/target/" />
     <ignored path="$PROJECT_DIR$/clothes-shop-api/target/" />
@@ -46,8 +48,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Users.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="11" selection-start-line="11" selection-end-line="12" selection-end-column="28" />
+            <state relative-caret-position="119">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/profile.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="10" selection-end-column="6" />
+            <state relative-caret-position="449">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -67,128 +69,91 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Profile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="17" selection-end-column="25" />
+            <state relative-caret-position="408">
+              <caret line="27" selection-start-line="27" selection-end-line="27" />
               <folding>
-                <element signature="e#127#128#0" expanded="true" />
-                <element signature="e#152#153#0" expanded="true" />
-                <element signature="e#189#190#0" expanded="true" />
-                <element signature="e#217#218#0" expanded="true" />
-                <element signature="e#252#253#0" expanded="true" />
-                <element signature="e#283#284#0" expanded="true" />
-                <element signature="e#331#332#0" expanded="true" />
-                <element signature="e#371#372#0" expanded="true" />
-                <element signature="e#402#403#0" expanded="true" />
-                <element signature="e#429#430#0" expanded="true" />
-                <element signature="e#469#470#0" expanded="true" />
-                <element signature="e#501#502#0" expanded="true" />
-                <element signature="e#533#534#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-                <element signature="e#603#604#0" expanded="true" />
-                <element signature="e#637#638#0" expanded="true" />
+                <element signature="e#641#642#0" expanded="true" />
                 <element signature="e#669#670#0" expanded="true" />
-                <element signature="e#697#698#0" expanded="true" />
-                <element signature="e#739#740#0" expanded="true" />
-                <element signature="e#773#774#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Dto/RegistrationFormDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
-              <folding>
-                <element signature="e#104#105#0" expanded="true" />
-                <element signature="e#135#136#0" expanded="true" />
-                <element signature="e#183#184#0" expanded="true" />
-                <element signature="e#223#224#0" expanded="true" />
-                <element signature="e#289#290#0" expanded="true" />
-                <element signature="e#337#338#0" expanded="true" />
-                <element signature="e#377#378#0" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
-                <element signature="e#435#436#0" expanded="true" />
-                <element signature="e#475#476#0" expanded="true" />
-                <element signature="e#507#508#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
-                <element signature="e#609#610#0" expanded="true" />
-                <element signature="e#643#644#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-                <element signature="e#703#704#0" expanded="true" />
-                <element signature="e#745#746#0" expanded="true" />
-                <element signature="e#779#780#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/LogController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/ProductController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="106" column="82" selection-start-line="106" selection-start-column="65" selection-end-line="106" selection-end-column="82" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/UserProfileController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="33" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/AuthController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="55" selection-start-line="55" selection-end-line="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1241#1242#0" expanded="true" />
-                <element signature="e#1271#1272#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/application.properties">
+        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/UserProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+            <state relative-caret-position="225">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/registration.jsp">
+        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/BrandController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+            <state relative-caret-position="425">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1559035473546" expanded="true" signature="3914:4212" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/productsList.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="73" selection-start-line="73" selection-end-line="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clothes-shop-api/src/main/java/com/konorin/clothes_shop_api/Services/BrandService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="53" selection-start-line="53" selection-end-line="59" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/AuthRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/ProfileRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/RoleRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -227,11 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/clothes-shop-api/src/main/java/com/konorin/clothes_shop_api/Producer/RabbitConfig.java" />
-        <option value="$PROJECT_DIR$/docker-compose.yaml" />
-        <option value="$PROJECT_DIR$/Makefile" />
-        <option value="$PROJECT_DIR$/config-server/pom.xml" />
-        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/Dockerfile" />
         <option value="$PROJECT_DIR$/config-server/src/main/java/config_service/ConfigServiceApplication.java" />
         <option value="$PROJECT_DIR$/config-server/src/main/java/config_service/PingController.java" />
         <option value="$PROJECT_DIR$/clothes-shop-api/Dockerfile" />
@@ -268,16 +228,21 @@
         <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/ProductDto.java" />
         <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Dto/ProductDto.java" />
         <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/productsList.jsp" />
-        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/ProductController.java" />
         <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/productsDetail.jsp" />
         <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/BrandController.java" />
         <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Users.java" />
-        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/ProfileRepository.java" />
-        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Profile.java" />
         <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Dto/RegistrationFormDto.java" />
         <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/AuthController.java" />
         <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/registration.jsp" />
         <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/ProductController.java" />
+        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/ProfileRepository.java" />
+        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Profile.java" />
+        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Dto/EditProfileDto.java" />
+        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/AuthRepository.java" />
+        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/RoleRepository.java" />
+        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/profile.jsp" />
+        <option value="$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/UserProfileController.java" />
       </list>
     </option>
   </component>
@@ -304,9 +269,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-203" />
+    <option name="y" value="23" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -316,7 +281,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -353,6 +317,25 @@
             <path>
               <item name="clothes-shop" type="b2602c69:ProjectViewProjectNode" />
               <item name="clothes-shop" type="462c0819:PsiDirectoryNode" />
+              <item name="clothes-shop-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="clothes_shop_api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="clothes-shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clothes-shop" type="462c0819:PsiDirectoryNode" />
+              <item name="clothes-shop-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="clothes_shop_api" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="clothes-shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clothes-shop" type="462c0819:PsiDirectoryNode" />
               <item name="clothes_shop_discovery_client" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -384,6 +367,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="clothes-shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clothes-shop" type="462c0819:PsiDirectoryNode" />
+              <item name="clothes_shop_discovery_client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="Configuration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="clothes-shop" type="b2602c69:ProjectViewProjectNode" />
@@ -394,6 +387,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="clothes-shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clothes-shop" type="462c0819:PsiDirectoryNode" />
+              <item name="clothes_shop_discovery_client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="DAL" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="clothes-shop" type="b2602c69:ProjectViewProjectNode" />
@@ -437,6 +440,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -564,12 +568,13 @@
       <workItem from="1558546616837" duration="4362000" />
       <workItem from="1558610220110" duration="926000" />
       <workItem from="1558637659321" duration="1399000" />
-      <workItem from="1558693094817" duration="45856000" />
+      <workItem from="1558693094817" duration="47781000" />
+      <workItem from="1559666985296" duration="7604000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68920000" />
+    <option name="totallyTimeSpent" value="78449000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -584,7 +589,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24200426" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24466951" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -607,7 +612,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.59046584" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.28060672" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -664,13 +669,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/ProductController.java</url>
-          <line>70</line>
+          <line>68</line>
           <properties />
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/ProductController.java</url>
-          <line>106</line>
+          <line>104</line>
           <properties />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
@@ -686,31 +691,22 @@
           <properties />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/UserProfileController.java</url>
+          <line>72</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/UserProfileController.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="95" column="21" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shop-consumer/src/main/java/shop/consumer/Subscriber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="30" selection-start-line="30" selection-end-line="40" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.9.RELEASE/spring-webmvc-5.0.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="568" selection-start-line="568" selection-end-line="568" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.0.9.RELEASE/spring-webmvc-5.0.9.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -802,23 +798,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Configuration/SecurityConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810">
-          <caret line="97" selection-start-line="97" selection-end-line="99" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/MainController.java" />
     <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -844,13 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Dto/ProductDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clothes-shop-api/src/main/java/com/konorin/clothes_shop_api/Models/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -858,9 +831,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/coatDetail.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/coatDetail.jsp" />
     <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/brandsList.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -872,13 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="18" selection-start-line="18" selection-end-line="38" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/productsList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="28" selection-start-line="28" selection-end-line="32" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -896,44 +860,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/productsDetail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="82" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/logs.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Authorities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/RoleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/AuthRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="69" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -965,16 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/ProfileRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -982,13 +902,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/BrandController.java">
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Dto/RegistrationFormDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="238">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1559035473546" expanded="true" signature="3914:4212" ph="..." />
+            <element signature="e#426#427#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1003,123 +922,189 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/ProductController.java">
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="106" column="82" selection-start-line="106" selection-start-column="65" selection-end-line="106" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/UserProfileController.java">
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DiscoveryClientApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="33" />
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="57" column="105" lean-forward="true" selection-start-line="57" selection-start-column="105" selection-end-line="57" selection-end-column="105" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Dto/RegistrationFormDto.java">
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Configuration/SecurityConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="33" lean-forward="true" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        <state relative-caret-position="542">
+          <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
           <folding>
-            <element signature="e#104#105#0" expanded="true" />
-            <element signature="e#135#136#0" expanded="true" />
-            <element signature="e#183#184#0" expanded="true" />
-            <element signature="e#223#224#0" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#377#378#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#475#476#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#643#644#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#779#780#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Profile.java">
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/productsDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="143">
+          <caret line="24" column="82" selection-start-line="24" selection-start-column="82" selection-end-line="24" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/registration.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="36" column="54" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="127" selection-start-line="127" selection-end-line="143" selection-end-column="5" />
           <folding>
-            <element signature="e#127#128#0" expanded="true" />
-            <element signature="e#152#153#0" expanded="true" />
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#217#218#0" expanded="true" />
-            <element signature="e#252#253#0" expanded="true" />
-            <element signature="e#283#284#0" expanded="true" />
-            <element signature="e#331#332#0" expanded="true" />
-            <element signature="e#371#372#0" expanded="true" />
-            <element signature="e#402#403#0" expanded="true" />
-            <element signature="e#429#430#0" expanded="true" />
-            <element signature="e#469#470#0" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#533#534#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#669#670#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#773#774#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Dto/ProductDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Dto/EditProfileDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="68" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
+          <folding>
+            <element signature="e#95#96#0" expanded="true" />
+            <element signature="e#122#123#0" expanded="true" />
+            <element signature="e#162#163#0" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
+            <element signature="e#466#467#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Authorities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="11" selection-start-line="11" selection-end-line="12" selection-end-column="28" />
+        <state relative-caret-position="119">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/ProfileRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/AuthRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/DAL/RoleRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes-shop-api/src/main/java/com/konorin/clothes_shop_api/Services/BrandService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="53" selection-start-line="53" selection-end-line="59" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/productsList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="73" selection-start-line="73" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Models/Profile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/BrandController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1559035473546" expanded="true" signature="3914:4212" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="10" selection-end-column="6" />
+        <state relative-caret-position="449">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/META-INF/resources/WEB-INF/jsp/registration.jsp">
+    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/UserProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/java/com/clothesshop/client/Controllers/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="225">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1241#1242#0" expanded="true" />
-            <element signature="e#1271#1272#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clothes_shop_discovery_client/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
         </state>
       </provider>
     </entry>

@@ -24,6 +24,10 @@ public class Profile {
         this.phone = phone;
     }
 
+    public Profile() {
+
+    }
+
     public Integer getId() {
         return id;
     }
