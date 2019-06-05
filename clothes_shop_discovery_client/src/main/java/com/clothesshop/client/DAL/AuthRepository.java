@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AuthRepository extends JpaRepository<Users, Integer> {
     void deleteByUsername(String username);
+    Users findByUsername(String username);
 }

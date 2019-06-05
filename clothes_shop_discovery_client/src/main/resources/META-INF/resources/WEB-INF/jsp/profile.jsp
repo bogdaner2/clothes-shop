@@ -27,7 +27,11 @@
     <button class="btn btn-lg btn-primary btn-block" type="submit">Change</button>
    </div>
   </form>
-  <button class="btn btn-lg btn-danger btn-block" onclick="window.location.href='/userProfile/delete/${profile.id}'" >Delete account</button>
+ </div>
+ <div class="row">
+   <div class="col-7 offset-4">
+    <button class="btn btn-lg btn-danger" onclick="window.location.href='/userProfile/delete/${profile.id}'" >Delete account</button>
+   </div>
  </div>
 </div>
 

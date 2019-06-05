@@ -4,13 +4,9 @@ import com.clothesshop.client.DAL.AuthRepository;
 import com.clothesshop.client.DAL.ProfileRepository;
 import com.clothesshop.client.DAL.RoleRepository;
 import com.clothesshop.client.Dto.EditProfileDto;
-import com.clothesshop.client.Dto.ProductDto;
-import com.clothesshop.client.Models.Brand;
-import com.clothesshop.client.Models.Product;
 import com.clothesshop.client.Models.Profile;
+import com.clothesshop.client.Models.Users;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.*;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -19,7 +15,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Optional;
@@ -46,6 +41,9 @@ public class UserProfileController {
                 .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"));
 
         Profile profile = repo.getByUsername(name);
+        if(profile == null) {
+            return "error";
+        }
         model.addAttribute("name", profile.getName());
         model.addAttribute("isAdmin", iaAdmin);
         model.addAttribute("profile", profile);
@@ -74,9 +72,13 @@ public class UserProfileController {
         if(!p.isPresent()) {
             return new ModelAndView("redirect:/login");
         }
+
         repo.delete(p.get());
-        authRepository.deleteByUsername(p.get().getUsername());
-        roleRepository.deleteByUsername(p.get().getUsername());
+        Users user = authRepository.findByUsername(p.get().getUsername());
+
+        user.setEnabled(false);
+
+        authRepository.save(user);
 
         return new ModelAndView("redirect:/logout");
 

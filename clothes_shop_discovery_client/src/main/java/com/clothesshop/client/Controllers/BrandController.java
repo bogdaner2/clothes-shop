@@ -29,7 +29,7 @@ public class BrandController {
     private LoadBalancerClient client;
 
     public String getInstancesRun(){
-        ServiceInstance instance = client.choose("clothes_shop_api");
+        // ServiceInstance instance = client.choose("clothes_shop_api");
         // TEMP
         return "http://localhost:5000";
         // return instance.getUri().toString();
@@ -65,7 +65,7 @@ public class BrandController {
 
         HttpEntity<Brand> entity = new HttpEntity<>(brand, headers);
 
-        String response = restTemplate
+        restTemplate
                 .exchange(url,HttpMethod.POST, entity, new ParameterizedTypeReference<String>(){})
                 .getBody();
 
