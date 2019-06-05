@@ -1,6 +1,8 @@
 package com.clothesshop.client.Controllers;
 
+import com.clothesshop.client.DAL.ProfileRepository;
 import com.clothesshop.client.Models.Log;
+import com.clothesshop.client.Models.Profile;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -22,6 +24,9 @@ public class LogController {
     @Autowired
     private LoadBalancerClient client;
 
+    @Autowired
+    ProfileRepository profileRepository;
+
     public String getInstancesRun(){
         ServiceInstance instance = client.choose("clothes_shop_api");
         // TEMP
@@ -42,9 +47,16 @@ public class LogController {
         String name = auth.getName();
         boolean iaAdmin = auth.getAuthorities().stream()
                 .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"));
-        model.addAttribute("name", name);
+
+        Profile profile = profileRepository.getByUsername(name);
+
+        String header = restTemplate.getForEntity(getInstancesRun() + "/config", String.class).getBody();
+        model.addAttribute("headerTitle", "bg-" + header);
+
+        model.addAttribute("name", profile.getName());
         model.addAttribute("isAdmin", iaAdmin);
         model.addAttribute("logs", logs);
+
 
         return "logs";
     }

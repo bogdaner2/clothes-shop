@@ -1,8 +1,10 @@
 package com.clothesshop.client.Controllers;
 
+import com.clothesshop.client.DAL.ProfileRepository;
 import com.clothesshop.client.Dto.ProductDto;
 import com.clothesshop.client.Models.Brand;
 import com.clothesshop.client.Models.Product;
+import com.clothesshop.client.Models.Profile;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -26,6 +28,8 @@ import java.io.IOException;
 @RequestMapping(path="products")
 public class ProductController {
 
+    @Autowired
+    ProfileRepository profileRepository;
 
     @Autowired
     private LoadBalancerClient client;
@@ -56,10 +60,18 @@ public class ProductController {
         String name = auth.getName();
         boolean iaAdmin = auth.getAuthorities().stream()
                 .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"));
-        model.addAttribute("name", name);
+
+        String header = restTemplate.getForEntity(getInstancesRun() + "/config", String.class).getBody();
+
+        Profile profile = profileRepository.getByUsername(name);
+        if(profile == null) {
+            return "error";
+        }
+        model.addAttribute("name", profile.getName());
         model.addAttribute("isAdmin", iaAdmin);
         model.addAttribute("products", products);
         model.addAttribute("brands", brands);
+        model.addAttribute("headerTitle", "bg-" + header);
 
         return "productsList";
     }
@@ -117,11 +129,15 @@ public class ProductController {
 
         ResponseEntity<String> response = restTemplate.getForEntity(brandsUrl, String.class);
         Brand[] brands = DeserializeBrandsList(response.getBody());
+        Profile profile = profileRepository.getByUsername(name);
+        String header = restTemplate.getForEntity(getInstancesRun() + "/config", String.class).getBody();
 
-        model.addObject("name", name);
+        model.addObject("name", profile.getName());
         model.addObject("isAdmin", iaAdmin);
         model.addObject("product", product);
         model.addObject("brands", brands);
+        model.addObject("headerTitle", "bg-" + header);
+
         return model;
     }
 

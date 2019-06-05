@@ -7,6 +7,9 @@ import com.clothesshop.client.Dto.EditProfileDto;
 import com.clothesshop.client.Models.Profile;
 import com.clothesshop.client.Models.Users;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Optional;
@@ -32,6 +36,16 @@ public class UserProfileController {
     @Autowired
     AuthRepository authRepository;
 
+    @Autowired
+    private LoadBalancerClient client;
+
+    public String getInstancesRun(){
+        ServiceInstance instance = client.choose("clothes_shop_api");
+        // TEMP
+        return "http://localhost:5000";
+        // return instance.getUri().toString();
+    }
+
     @RequestMapping(method = RequestMethod.GET)
     public String all(Model model, String error, String logout) {
 
@@ -45,8 +59,14 @@ public class UserProfileController {
             return "error";
         }
         model.addAttribute("name", profile.getName());
+        RestTemplate restTemplate = new RestTemplate();
+
+        ResponseEntity<String> response = restTemplate.getForEntity(getInstancesRun() + "/config", String.class);
+        String header = response.getBody();
+
         model.addAttribute("isAdmin", iaAdmin);
         model.addAttribute("profile", profile);
+        model.addAttribute("headerTitle", "bg-" + header);
 
         return "profile";
     }

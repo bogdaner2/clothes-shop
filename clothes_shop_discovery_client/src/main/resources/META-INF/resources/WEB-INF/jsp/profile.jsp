@@ -29,8 +29,8 @@
   </form>
  </div>
  <div class="row">
-   <div class="col-7 offset-4">
-    <button class="btn btn-lg btn-danger" onclick="window.location.href='/userProfile/delete/${profile.id}'" >Delete account</button>
+   <div style="max-width: 600px;padding-left: 0;" class="col-7 offset-4">
+    <button class="btn btn-lg btn-danger btn-block" onclick="window.location.href='/userProfile/delete/${profile.id}'" >Delete account</button>
    </div>
  </div>
 </div>

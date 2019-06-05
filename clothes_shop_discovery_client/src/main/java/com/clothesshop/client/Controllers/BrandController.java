@@ -1,6 +1,8 @@
 package com.clothesshop.client.Controllers;
 
+import com.clothesshop.client.DAL.ProfileRepository;
 import com.clothesshop.client.Models.Brand;
+import com.clothesshop.client.Models.Profile;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -26,6 +28,9 @@ public class BrandController {
 
 
     @Autowired
+    ProfileRepository profileRepository;
+
+    @Autowired
     private LoadBalancerClient client;
 
     public String getInstancesRun(){
@@ -48,7 +53,13 @@ public class BrandController {
         String name = auth.getName();
         boolean iaAdmin = auth.getAuthorities().stream()
                 .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"));
-        model.addAttribute("name", name);
+        String header = restTemplate.getForEntity(getInstancesRun() + "/config", String.class).getBody();
+        Profile profile = profileRepository.getByUsername(name);
+        if(profile == null) {
+            return "error";
+        }
+        model.addAttribute("headerTitle", "bg-" + header);
+        model.addAttribute("name", profile.getName());
         model.addAttribute("isAdmin", iaAdmin);
         model.addAttribute("brands", brands);
 
@@ -105,7 +116,11 @@ public class BrandController {
                 .exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<String>() {})
                 .getBody();
 
-        model.addObject("name", name);
+        Profile profile = profileRepository.getByUsername(name);
+        String header = restTemplate.getForEntity(getInstancesRun() + "/config", String.class).getBody();
+        model.addObject("headerTitle", "bg-" + header);
+
+        model.addObject("name", profile.getName());
         model.addObject("isAdmin", iaAdmin);
 
         model.addObject("brand", Deserialize(brand));
