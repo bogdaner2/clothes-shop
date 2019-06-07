@@ -52,7 +52,7 @@ services:
     volumes:
       - ./clothes_shop_discovery_client:/usr/src/clothes_shop_discovery_client
     ports:
-      - "6000:6000"
+      - "4000:4000"
 
   rabbit-mq:
     image: rabbitmq:3.8.0-beta.3-management

@@ -33,11 +33,12 @@ public class BrandController {
     @Autowired
     private LoadBalancerClient client;
 
+//    public String getInstancesRun(){
+//        ServiceInstance instance = client.choose("clothes_shop_api");
+//        return instance.getUri().toString();
+//    }
     public String getInstancesRun(){
-        // ServiceInstance instance = client.choose("clothes_shop_api");
-        // TEMP
         return "http://localhost:5000";
-        // return instance.getUri().toString();
     }
 
     @RequestMapping(method = RequestMethod.GET)
