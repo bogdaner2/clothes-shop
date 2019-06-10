@@ -15,6 +15,20 @@ services:
         - ./clothes-shop-api:/usr/src/clothes-shop-api
     ports:
     - "5000:5000"
+  shops-api:
+    depends_on:
+      - database
+      - eureka-server
+      - rabbit-mq
+    container_name: shops-api
+    restart: always
+    build:
+      context: ./shops-api
+      dockerfile: Dockerfile
+    volumes:
+      - ./shops-api:/usr/src/shops-api
+    ports:
+      - "5100:5100"
   database:
     container_name: database
     restart: always
@@ -43,6 +57,7 @@ services:
   client:
     depends_on:
       - eureka-server
+      - database
       - api
     container_name: client
     restart: always

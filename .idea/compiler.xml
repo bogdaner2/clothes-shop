@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="shops-api" />
         <module name="config-server" />
         <module name="clothes-shop-api" />
         <module name="clothes_shop_eureka_server" />
@@ -20,6 +21,7 @@
       <module name="clothes_shop_eureka_server" target="1.8" />
       <module name="config-server" target="1.8" />
       <module name="shop-consumer" target="1.8" />
+      <module name="shops-api" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -30,6 +32,7 @@
       <module name="clothes_shop_eureka_server" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="shop-consumer" options="-parameters" />
+      <module name="shops-api" options="-parameters" />
     </option>
   </component>
 </project>

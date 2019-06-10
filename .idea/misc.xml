@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/shop-consumer/pom.xml" />
         <option value="$PROJECT_DIR$/Rest_Api/pom.xml" />
+        <option value="$PROJECT_DIR$/shops-api/pom.xml" />
       </list>
     </option>
   </component>

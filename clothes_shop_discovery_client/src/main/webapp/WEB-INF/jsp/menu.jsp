@@ -7,8 +7,6 @@
         <div class="navbar-nav mr-auto" >
             <a class="nav-item nav-link" href="/brands">Brands</a>
             <a class="nav-item nav-link" href="/products">Products</a>
-            <a class="nav-item nav-link" href="/shops">Shops</a>
-            <a class="nav-item nav-link" href="/shopProducts">Shop Products</a>
             <a style="display: ${isAdmin ? 'block': 'none'}" class="nav-item nav-link" href="/logs">Logs</a>
         </div>
         <div class="navbar-nav">

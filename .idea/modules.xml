@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/clothes_shop_eureka_server/clothes_shop_eureka_server.iml" filepath="$PROJECT_DIR$/clothes_shop_eureka_server/clothes_shop_eureka_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-consumer/shop-consumer.iml" filepath="$PROJECT_DIR$/shop-consumer/shop-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shops-api/shops-api.iml" filepath="$PROJECT_DIR$/shops-api/shops-api.iml" />
     </modules>
   </component>
 </project>

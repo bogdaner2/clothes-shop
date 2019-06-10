@@ -39,10 +39,10 @@ public class UserProfileController {
 //    @Autowired
 //    private LoadBalancerClient client;
 //
-//        public String getInstancesRun(){
+//     public String getInstancesRun(){
 //        ServiceInstance instance = client.choose("clothes_shop_api");
 //        return instance.getUri().toString();
-    // }
+//     }
     public String getInstancesRun(){
         return "http://localhost:5000";
     }
