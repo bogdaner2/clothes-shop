@@ -33,18 +33,26 @@ public class ShopController {
     @Autowired
     private LoadBalancerClient client;
 
-    //    public String getInstancesRun(){
+    //    public String getInstancesRunOfClothesShopApi(){
+//        ServiceInstance instance = client.choose("clothes_shop_api");
+//        return instance.getUri().toString();
+//    }
+    public String getInstancesRunOfClothesShopApi(){
+        return "http://localhost:5000";
+    }
+
+    //    public String getInstancesRunOfShopsApi(){
 //        ServiceInstance instance = client.choose("shops_api");
 //        return instance.getUri().toString();
 //    }
-    public String getInstancesRun(){
+    public String getInstancesRunOfShopsApi(){
         return "http://localhost:5100";
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public String all(Model model, String error, String logout) {
 
-        String url = String.format("%s/api/shops", getInstancesRun());
+        String url = String.format("%s/api/shops", getInstancesRunOfShopsApi());
         RestTemplate restTemplate = new RestTemplate();
 
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
@@ -54,7 +62,7 @@ public class ShopController {
         String name = auth.getName();
         boolean iaAdmin = auth.getAuthorities().stream()
                 .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"));
-        String header = restTemplate.getForEntity(getInstancesRun() + "/config", String.class).getBody();
+        String header = restTemplate.getForEntity(getInstancesRunOfClothesShopApi() + "/config", String.class).getBody();
         Profile profile = profileRepository.getByUsername(name);
         if(profile == null) {
             return "error";
@@ -69,7 +77,7 @@ public class ShopController {
 
     @RequestMapping(value="/create", method=RequestMethod.POST)
     public ModelAndView create(@ModelAttribute Shop shop) {
-        String url = String.format("%s/api/shops/", getInstancesRun());
+        String url = String.format("%s/api/shops/", getInstancesRunOfShopsApi());
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();
@@ -87,7 +95,7 @@ public class ShopController {
     @RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
     public ModelAndView delete(@PathVariable("id") Integer id) {
 
-        String url = String.format("%s/api/shops/" + id, getInstancesRun());
+        String url = String.format("%s/api/shops/" + id, getInstancesRunOfShopsApi());
         RestTemplate restTemplate = new RestTemplate();
 
         String response = restTemplate
@@ -110,7 +118,7 @@ public class ShopController {
         boolean iaAdmin = auth.getAuthorities().stream()
                 .anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"));
 
-        String url = String.format("%s/api/shops/" + id, getInstancesRun());
+        String url = String.format("%s/api/shops/" + id, getInstancesRunOfShopsApi());
         RestTemplate restTemplate = new RestTemplate();
 
         String shop = restTemplate
@@ -118,7 +126,7 @@ public class ShopController {
                 .getBody();
 
         Profile profile = profileRepository.getByUsername(name);
-        String header = restTemplate.getForEntity(getInstancesRun() + "/config", String.class).getBody();
+        String header = restTemplate.getForEntity(getInstancesRunOfClothesShopApi() + "/config", String.class).getBody();
         model.addObject("headerTitle", "bg-" + header);
 
         model.addObject("name", profile.getName());
@@ -133,7 +141,7 @@ public class ShopController {
 
         shop.setId(id);
 
-        String url = String.format("%s/api/shops/"+ id, getInstancesRun());
+        String url = String.format("%s/api/shops/"+ id, getInstancesRunOfShopsApi());
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();

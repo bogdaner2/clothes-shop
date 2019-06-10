@@ -54,20 +54,20 @@ services:
     ports:
       - "8761:8761"
 
-  client:
-    depends_on:
-      - eureka-server
-      - database
-      - api
-    container_name: client
-    restart: always
-    build:
-      context: ./clothes_shop_discovery_client
-      dockerfile: Dockerfile
-    volumes:
-      - ./clothes_shop_discovery_client:/usr/src/clothes_shop_discovery_client
-    ports:
-      - "4000:4000"
+#  client:
+#    depends_on:
+#      - eureka-server
+#      - database
+#      - api
+#    container_name: client
+#    restart: always
+#    build:
+#      context: ./clothes_shop_discovery_client
+#      dockerfile: Dockerfile
+#    volumes:
+#      - ./clothes_shop_discovery_client:/usr/src/clothes_shop_discovery_client
+#    ports:
+#      - "4000:4000"
 
   rabbit-mq:
     image: rabbitmq:3.8.0-beta.3-management
